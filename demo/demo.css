@@ -1,0 +1,222 @@
+/* ==============================================================================
+   DEMO · estilos de los elementos exclusivos de la demo (demo/demo-overrides.js)
+   ============================================================================== */
+:root {
+  --demo-oro: #C1652B;
+  --demo-oro-suave: rgba(193, 101, 43, 0.12);
+  --demo-texto: #2b2b2b;
+  --demo-muted: #6b6b6b;
+  --demo-borde: #E8DFDA;
+}
+
+.demo-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2e9d5b;
+  box-shadow: 0 0 0 3px rgba(46, 157, 91, 0.18);
+  flex-shrink: 0;
+}
+
+/* ---------- Accesos rápidos en el login ---------- */
+.demo-accesos {
+  margin-top: 14px;
+  padding: 12px;
+  border: 1px dashed var(--demo-oro);
+  border-radius: 12px;
+  background: var(--demo-oro-suave);
+}
+.demo-accesos-titulo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--demo-texto);
+}
+.demo-accesos-lista { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.demo-acceso {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 4px;
+  border: 1px solid var(--demo-borde);
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+.demo-acceso:hover { transform: translateY(-1px); border-color: var(--demo-oro); box-shadow: 0 4px 14px rgba(193, 101, 43, 0.2); }
+.demo-acceso-icono { width: 22px; height: 22px; color: var(--demo-oro); }
+.demo-acceso-icono svg { width: 100%; height: 100%; }
+.demo-acceso-texto { display: flex; flex-direction: column; align-items: center; line-height: 1.2; }
+.demo-acceso-texto strong { font-size: 11px; color: var(--demo-texto); }
+.demo-acceso-texto small { display: none; }
+.demo-accesos-nota { margin: 8px 0 0; font-size: 11px; color: var(--demo-muted); text-align: center; }
+.demo-accesos-nota code { background: #fff; padding: 1px 6px; border-radius: 5px; font-weight: 700; color: var(--demo-texto); }
+
+/* ---------- Correo simulado con el código ---------- */
+.demo-codigo {
+  position: fixed;
+  right: 20px;
+  bottom: 70px;
+  z-index: 20000;
+  width: 290px;
+  padding: 14px 16px 16px;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+  border-top: 4px solid var(--demo-oro);
+  font-size: 13px;
+  color: var(--demo-texto);
+  animation: demoEntrar .25s ease-out;
+}
+.demo-codigo-cabecera { display: flex; align-items: center; gap: 8px; font-weight: 700; margin-bottom: 6px; }
+.demo-codigo-cabecera svg { width: 18px; height: 18px; color: var(--demo-oro); }
+.demo-codigo-cerrar { margin-left: auto; border: none; background: none; font-size: 20px; cursor: pointer; color: var(--demo-muted); }
+.demo-codigo p { margin: 0 0 8px; color: var(--demo-muted); }
+.demo-codigo-valor { font-size: 30px; font-weight: 800; letter-spacing: 8px; text-align: center; margin: 4px 0 10px; color: var(--demo-texto); }
+.demo-codigo-usar { width: 100%; padding: 9px; border: none; border-radius: 8px; background: var(--demo-oro); color: #fff; font-weight: 700; cursor: pointer; font-family: inherit; }
+
+/* ---------- Insignia flotante ---------- */
+.demo-insignia {
+  position: fixed;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 8px 7px 14px;
+  border-radius: 999px;
+  background: rgba(30, 30, 30, 0.88);
+  color: #f3f3f3;
+  font-size: 12px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+.demo-insignia button {
+  border: none;
+  border-radius: 999px;
+  padding: 5px 12px;
+  background: var(--demo-oro);
+  color: #fff;
+  font-weight: 700;
+  font-size: 11px;
+  cursor: pointer;
+  font-family: inherit;
+}
+@media (max-width: 640px) { .demo-insignia span:not(.demo-dot) { display: none; } }
+
+/* ---------- Vista previa simulada ---------- */
+.demo-previa-wrap { background: #ece8e6; display: flex; align-items: flex-start; justify-content: center; overflow: auto; padding: 22px; }
+.demo-previa-nota { margin: 10px 0 0; font-size: 12px; color: var(--demo-muted); text-align: center; }
+.demo-previa-real { max-width: 100%; max-height: 100%; border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,.15); }
+
+.demo-hoja {
+  width: 100%;
+  max-width: 560px;
+  min-height: 640px;
+  padding: 46px 48px;
+  background: #fff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  color: #333;
+  font-size: 12.5px;
+  line-height: 1.65;
+}
+.demo-hoja-marca { font-size: 10px; letter-spacing: 3px; font-weight: 800; color: var(--demo-oro); margin-bottom: 18px; }
+.demo-hoja h1 { font-size: 21px; margin: 0 0 4px; color: #1f1f1f; }
+.demo-hoja h3 { font-size: 13px; margin: 18px 0 4px; color: #1f1f1f; }
+.demo-hoja p { margin: 0; }
+.demo-hoja-meta { color: #888; font-size: 11px; border-bottom: 2px solid var(--demo-oro); padding-bottom: 12px; margin-bottom: 8px !important; }
+
+.demo-excel { width: 100%; background: #fff; box-shadow: 0 8px 30px rgba(0,0,0,.12); font-size: 12px; overflow: auto; }
+.demo-excel-barra { background: #1e7145; color: #fff; padding: 8px 12px; font-weight: 700; }
+.demo-excel table { border-collapse: collapse; width: 100%; }
+.demo-excel th { background: #f3f3f3; color: #666; font-weight: 600; border: 1px solid #ddd; padding: 4px 8px; }
+.demo-excel td { border: 1px solid #e3e3e3; padding: 6px 10px; white-space: nowrap; color: #333; }
+.demo-excel-num { background: #f3f3f3; color: #666; text-align: center; width: 28px; }
+.demo-excel-cab { font-weight: 700; background: #e8f3ec; }
+.demo-excel-valor { text-align: right; font-variant-numeric: tabular-nums; }
+.demo-excel-total { font-weight: 700; }
+
+.demo-slide {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  padding: 8% 9%;
+  background: linear-gradient(135deg, #1f2130 0%, #34345e 100%);
+  color: #fff;
+  box-shadow: 0 8px 30px rgba(0,0,0,.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.demo-slide-franja { position: absolute; left: 0; top: 0; bottom: 0; width: 10px; background: var(--demo-oro); }
+.demo-slide-marca { margin: 0 0 12px; letter-spacing: 4px; font-size: 11px; font-weight: 800; color: var(--demo-oro); }
+.demo-slide h1 { margin: 0; font-size: 28px; line-height: 1.2; }
+.demo-slide-sub { margin: 10px 0 0; opacity: .75; font-size: 13px; }
+.demo-slide-puntos { position: absolute; right: 7%; bottom: 10%; display: flex; gap: 6px; }
+.demo-slide-puntos span { width: 36px; height: 6px; border-radius: 3px; background: rgba(255,255,255,.25); }
+.demo-slide-puntos span:first-child { background: var(--demo-oro); }
+
+.demo-imagen {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,.9);
+  box-shadow: 0 8px 30px rgba(0,0,0,.15);
+}
+.demo-imagen svg { width: 72px; height: 72px; }
+.demo-imagen p { margin: 10px 0 0; font-weight: 600; }
+
+.demo-zip { background: #fff; padding: 24px 28px; border-radius: 10px; width: 100%; box-shadow: 0 8px 30px rgba(0,0,0,.1); font-size: 13px; }
+.demo-zip ul { margin: 10px 0 0; padding-left: 18px; font-family: monospace; color: #444; }
+
+/* ---------- Explorador de Drive simulado ---------- */
+.demo-picker-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(2px);
+}
+.demo-picker {
+  width: min(560px, 92vw);
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 20px 60px rgba(0,0,0,.3);
+  animation: demoEntrar .2s ease-out;
+}
+.demo-picker-cabecera { display: flex; align-items: center; gap: 12px; padding: 18px 20px; border-bottom: 1px solid #eee; background: #f8f8fa; }
+.demo-picker-cabecera h3 { margin: 0; font-size: 16px; color: #202124; }
+.demo-picker-cabecera p { margin: 2px 0 0; font-size: 12px; color: #5f6368; }
+.demo-picker-cerrar { margin-left: auto; border: none; background: none; font-size: 24px; cursor: pointer; color: #5f6368; }
+.demo-picker-lista { overflow-y: auto; padding: 10px 14px; }
+.demo-picker-item { display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 10px; cursor: pointer; }
+.demo-picker-item:hover { background: #f3f4f6; }
+.demo-picker-item input { width: 17px; height: 17px; accent-color: var(--demo-oro); }
+.demo-picker-item img { width: 26px; height: 26px; object-fit: contain; }
+.demo-picker-nombre { flex: 1; font-size: 13px; font-weight: 600; color: #202124; }
+.demo-picker-tam { font-size: 12px; color: #5f6368; }
+.demo-picker-pie { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border-top: 1px solid #eee; background: #f8f8fa; font-size: 12px; color: #5f6368; }
+
+@keyframes demoEntrar { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
